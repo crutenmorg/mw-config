@@ -129,7 +129,6 @@ $IP/extensions/ScratchBlocks/extension.json
 $IP/extensions/Scribunto/Scribunto.php
 $IP/extensions/SimpleChanges/SimpleChanges.php
 $IP/extensions/SimpleTooltip/SimpleTooltip.php
-$IP/extensions/SiteMatrix/extension.json
 $IP/extensions/SiteScout/extension.json
 $IP/extensions/SocialProfile/SocialProfile.php
 $IP/extensions/SocialProfile/UserWelcome/UserWelcome.php
