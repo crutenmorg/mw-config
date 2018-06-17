@@ -231,7 +231,10 @@ $wgConf->settings = array(
 		'default' => false,
 		'metawiki' => true,
 	),
-
+	'wgAbuseFilterAnonBlockDuration' => array(
+		'default' => null,
+		'marioserieswiki' => 2592000,
+	),
 
 	// Anti-spam
 	'wgAccountCreationThrottle' => array(
@@ -1023,6 +1026,11 @@ $wgConf->settings = array(
 			'user' => true,
 			'editor' => true,
 		),
+		'+saoirsewikiwiki' => array(
+			'anon' => true,
+			'user' => true,
+			'bureaucrat' => true,
+		),
 		'+scruffywiki' => array(
 			'anon' => true,
 		),
@@ -1140,6 +1148,7 @@ $wgConf->settings = array(
 		'default' => false,
 		'cristianopediawiki' => true,
 		'elarawiki' => true,
+		'tallerwiki' => true,
 		'tallerdecristianopediawiki' => true,
 		'trexwiki' => true,
 		'unionwiki' => true,
@@ -1411,6 +1420,7 @@ $wgConf->settings = array(
 	'wmgUseMobileFrontend' => array(
 		'default' => true,
 		'carmeigatwiki' => false,
+		'corydoctorowwiki' => false,
 		'izanagiwiki' => false,
 		'jawptestwiki' => false,
 		'macfan4000wiki' => false,
@@ -1823,6 +1833,7 @@ $wgConf->settings = array(
 		'+exercicesdefrancaisprodfrwiki' => array('html', 'htm' ),
 		'+exitsincwiki' => array('txt' ),
 		'+indrikwiki' => array('mp3', 'mus', 'mid' ),
+		'+jadtechwiki' => array('png', 'bmp', 'gif', 'ico', 'ogg', 'mp3', 'svg', 'pdf', 'flac', 'mp4', 'exe', 'zip', 'jpeg', 'jpg'),
 		'+jayuwikiwiki' => array('bmp', 'apng', 'tiff', 'wav', 'mp3', 'oga', 'ogv', 'asv', 'swf', 'wmv'),
 		'+jcswiki' => array( 'docx', 'doc', 'odt', 'ods', 'odp', 'xls', 'xlsx', 'ppt', 'pptx', 'bmp', 'tiff', 'avi', 'mov', 'mp3', 'mp4', 'wma', 'swf', 'zip'),
 		'+modularwiki' => array('mid', 'mp3', 'flac', 'fpd', 'oga', 'ogv'),
@@ -1937,6 +1948,14 @@ $wgConf->settings = array(
 	),
 	'wgInterwikiCentralDB' => array(
 		'default' => 'metawiki',
+	),
+	
+	//Imports
+	'wgImportSources' => array(
+		'default' => array(
+			'meta',
+			'templatewiki',
+		),
 	),
 
 	// Job Queue
@@ -2317,6 +2336,8 @@ $wgConf->settings = array(
 		'ayrshirewiki' => true,
 		'blocknetwiki' => false,
 		'takethatwikiwiki' => false,
+		'tmewiki' => false,
+		'vandalismwikiwiki' => false,
 	),
 	'wgCapitalLinks' => array(
 		'default' => true,
@@ -2557,6 +2578,26 @@ $wgConf->settings = array(
 			NS_EXPLANATION => 'Explanation',
 			NS_EXPLANATION_TALK => 'Explanation_talk',
 		),
+		'tallerwiki' => array(
+			NS_TEST => 'Prueba',
+			NS_TEST_TALK => 'Prueba_discusión',
+			NS_PAGE => 'Página',
+			NS_PAGE_TALK => 'Página_discusión',
+			NS_ANEXO => 'Anexo',
+			NS_ANEXO_TALK => 'Anexo_discusión',
+			NS_REGISTRO => 'Registro',
+			NS_REGISTRO_TALK => 'Registro_discusión',
+			NS_LISTA => 'Lista',
+			NS_LISTA_TALK => 'Lista_discusión',
+			NS_BUG => 'Bug',
+			NS_BUG_TALK => 'Bug_discusión',
+			NS_PROYECTO => 'Proyecto',
+			NS_PROYECTO_TALK => 'Proyecto_discusión',
+			NS_TALLER => 'Taller',
+			NS_TALLER_TALK => 'Taller_discusión',
+			NS_MODELO => 'Modelo',
+			NS_MODELO_TALK => 'Modelo_discusión',
+		),
 		'tallerdecristianopediawiki' => array(
 			NS_TEMA => 'Tema',
 			NS_TEMA_TALK => 'Tema discusión',
@@ -2712,6 +2753,7 @@ $wgConf->settings = array(
 		'+reviwiki' => array( NS_SERVER ),
 		'+reviwikiwiki' => array ( NS_HANDBOOK ),
 		'+safiriawiki' => array( NS_HOENN ),
+		'tallerwiki' => array( NS_ANEXO ),
 		'+tmewiki' => array( NS_CALL_OF_DUTY, NS_MINECRAFT, NS_SUPER_MARIO_LAND_2, NS_SUPER_MARIO_WORLD_2, NS_SUPER_MARIO_BROS, NS_SUPER_MARIO_ADVANCE, NS_SUPER_MARIO_ADVANCE_2, NS_SUPER_MARIO_ADVANCE_3, NS_SUPER_MARIO_ADVANCE_4, NS_THE_LEGEND_OF_ZELDA, NS_CIVILIZATION_IV, NS_GAME, NS_IDEA, NS_TIMELINE ),
 		'+unionwiki' => array( NS_ANEXO ),
 		'+wiki1776wiki' => array( NS_ANEXO ),
@@ -3104,6 +3146,26 @@ $wgConf->settings = array(
 			NS_MAIN => true,
 			NS_USER => true,
 		),
+		'+tallerwiki' => array(
+			NS_PROJECT => true,
+			NS_PROJECT_TALK => true,
+			NS_PAGE => true,
+			NS_PAGE_TALK => true,
+			NS_TEST => true,
+			NS_TEST_TALK => true,
+			NS_REGISTRO => true,
+			NS_REGISTRO_TALK => true,
+			NS_LISTA => true,
+			NS_LISTA_TALK => true,
+			NS_BUG => true,
+			NS_BUG_TALK => true,
+			NS_PROYECTO => true,
+			NS_PROYECTO_TALK => true,
+			NS_TALLER => true,
+			NS_TALLER_TALK => true,
+			NS_MODELO => true,
+			NS_MODELO_TALK => true,
+		),
 		'+thegreatwarwiki' => array(
 			NS_MAIN => true,
 		),
@@ -3227,7 +3289,7 @@ $wgConf->settings = array(
 		'default' => array(),
 		'+metawiki' => array(
 			'cvt' => array(
-				'bot',
+				'flood',
 			),
 		),
 	),	
@@ -3368,6 +3430,7 @@ $wgConf->settings = array(
 		),
 		'+metawiki' => array(
 			'sysop' => array(
+				'flood',
 				'translator',
 				'translationadmin',
 			),
@@ -3936,6 +3999,9 @@ $wgConf->settings = array(
 				'globalblock' => true,
 				'block' => true,
 			),
+			'flood' => array(
+				'bot' => true,
+			),
 			'proxybot' => array(
 				'editprotected' => true,
 				'globalblock' => true,
@@ -4321,7 +4387,7 @@ $wgConf->settings = array(
 		),
 		'+metawiki' => array(
 			'cvt' => array(
-				'bot',
+				'flood',
 			),
 		),
 	),
@@ -4457,6 +4523,7 @@ $wgConf->settings = array(
 		),
 		'+metawiki' => array(
 			'sysop'	=> array(
+				'flood',
 				'translator',
 				'translationadmin',
 			),
@@ -4941,7 +5008,6 @@ $wgConf->settings = array(
 		'programmingredwiki' => 'https://programming.red',
 		'pruebawiki' => 'https://es.publictestwiki.com',
 		'pwikiwiki' => 'https://pwiki.arkcls.com',
-		'radviserwiki' => 'https://www.radviser.org',
 		'testwiki' => 'https://publictestwiki.com',
 		'tulpawiki' => 'https://wiki.tulpa.info',
 		'reviwiki' => 'https://private.revi.wiki',
@@ -5302,7 +5368,6 @@ $wgConf->settings = array(
 			'wiki\.svenskabriardklubben\.se',
 			'www\.schulwiki\.de',
 			'holonet\.pw',
-			'www\.radviser\.org',
 			'guiasdobrasil\.com\.br',
 			'enc\.for\.uz',
 			'wiki\.mikrodev\.com',
@@ -5348,6 +5413,26 @@ $wgConf->settings = array(
 			NS_TEMPLATE => true,
 			NS_CATEGORY => true,
 			NS_FILE => true,
+		),
+		'+tallerwiki' => array(
+			NS_PROJECT => true,
+			NS_PROJECT_TALK => true,
+			NS_PAGE => true,
+			NS_PAGE_TALK => true,
+			NS_TEST => true,
+			NS_TEST_TALK => true,
+			NS_REGISTRO => true,
+			NS_REGISTRO_TALK => true,
+			NS_LISTA => true,
+			NS_LISTA_TALK => true,
+			NS_BUG => true,
+			NS_BUG_TALK => true,
+			NS_PROYECTO => true,
+			NS_PROYECTO_TALK => true,
+			NS_TALLER => true,
+			NS_TALLER_TALK => true,
+			NS_MODELO => true,
+			NS_MODELO_TALK => true,
 		),
 		'+tallerdecristianopediawiki' => array(
 			NS_TEMA => true,
