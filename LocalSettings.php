@@ -606,7 +606,7 @@ $wgConf->settings = array(
 	),
 
 	'wgReadOnly' => array(
-		'default' => false,
+		'default' => "Upgrading to MediaWiki 1.31",
 	),
 	'wgSharedDB' => array(
 		'default' => 'metawiki',
